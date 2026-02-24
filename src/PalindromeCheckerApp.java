@@ -1,4 +1,4 @@
-public class PalindromeCheckerApp {
+public class UseCase4PalindromeCheckerApp {
 
     public static void main(String[] args) {
 
@@ -8,18 +8,25 @@ public class PalindromeCheckerApp {
 
         String input = "madam";
 
-        String reversed = "";
+        char[] charArray = input.toCharArray();
 
-        for (int i = input.length() - 1; i >= 0; i--) {
+        int start = 0;
+        int end = charArray.length - 1;
 
-            reversed = reversed + input.charAt(i);
+        boolean isPalindrome = true;
 
+        while (start < end) {
+
+            if (charArray[start] != charArray[end]) {
+                isPalindrome = false;
+                break;
+            }
+
+            start++;
+            end--;
         }
 
-        boolean isPalindrome = input.equals(reversed);
-
         System.out.println("Input String : " + input);
-        System.out.println("Reversed String : " + reversed);
         System.out.println("Is Palindrome : " + isPalindrome);
 
     }
